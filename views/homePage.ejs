@@ -1,0 +1,52 @@
+<%- include('partials/head') %>
+<title>Homepage</title>
+<%- include('partials/headclose') %>
+<div class="hr">
+  <img src="/images/logo.png" />
+</div>
+<div class="authenticatingContainer">
+  <div class="loginButtonContainer">
+    <% if(req.user) {%>
+    <a class="loginBtn" href="/upload">Upload</a>
+    <a class="loginBtn" href="/logout">Logout</a>
+    <% }else{ %>
+    <a class="loginBtn" href="/login">Login</a>
+    <% } %>
+  </div>
+  <div class="imgContainer">
+    <img class="img" src="/images/robot.png" />
+  </div>
+  <% if(!req.user) {%>
+  <form novalidate action="/signup" method="post" class="signupContainer">
+    <h2 class="signupContainerHeading">Sign Up & Start Your Free Trial</h2>
+    <%- include('partials/flash') %>
+    <div class="firstandLastInputs">
+      <input required name="firstName" class="names form-control" type="text" placeholder="First name" />
+      <input required name="lastName" class="names form-control" type="text" placeholder="Last name" />
+    </div>
+    <input required name="username" type="email" class="fullWInputs form-control" placeholder="Your email address" />
+    <input required name="password" type="password" class="fullWInputs form-control" placeholder="Pick a password" />
+    <p class="helperText">Use atleast 1 letter, 1 number and seven characters</p>
+    <button type="submit" class="submitBtn">Sign up</button>
+  </form>
+  <% } %>
+</div>
+<hr>
+<hr>
+<div class="secondContainer">
+  <div class="benefitContainer">
+    <h3 class="benefitsHeading">Benefits of using a resume parser</h3>
+    <div class="listContainer">
+      <ul class="innerContainer">
+        <li class="list">Easy to use</li>
+        <li class="list">Less time-consuming</li>
+        <li class="list">Does your work for you</li>
+        <li class="list">Will get you a job</li>
+        <li class="list">Will make you RICH</li>
+      </ul>
+    </div>
+  </div>
+  <div class="cvImageContainer">
+    <img src="/images/cv.png" </div>
+  </div>
+  <%- include('partials/bodyclose') %>

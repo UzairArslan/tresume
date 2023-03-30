@@ -1,0 +1,18 @@
+<%- include('partials/head') %>
+<title>Login</title>
+<%- include('partials/headclose') %>
+<div class="hr">
+  <a href="/">
+    <img src="/images/logo.png" />
+  </a>
+</div>
+<div class="loginContainer">
+  <form novalidate action="/login" method="post" class="signupContainer">
+    <h2 class="signupContainerHeading">Login to your account</h2>
+    <%- include('partials/flash') %>
+    <input required name="username" type="email" class="fullWInputs form-control" placeholder="Your email address" />
+    <input required name="password" type="password" class="fullWInputs form-control" placeholder="Enter your password" />
+    <button type="submit" class="submitBtn mt-3">Login</button>
+  </form>
+</div>
+<%- include('partials/bodyclose') %>

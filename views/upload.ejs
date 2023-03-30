@@ -1,0 +1,54 @@
+<%- include('partials/head') %>
+<title>Upload Resume</title>
+<%- include('partials/headclose') %>
+<div class="uploadPageContainer">
+  <a href="/">
+    <img src="/images/logo.png" />
+  </a>
+  <%- include('partials/flash') %>
+  <div class="uploadingContainer">
+    <div class="leftSide">
+      <label for="upload" class="uploadBtn">Upload Resume</label>
+      <p class="notice">**only in PDF format</p>
+      <div id="noPDF" class="noPDF">
+        <h3 class="noPDFText">No PDF found</h3>
+      </div>
+      <div id="pdf-preview" class="none"></div>
+      <form action="/upload" method="post" enctype="multipart/form-data">
+        <input name="resume" onchange="previewPDF(event)" id="upload" type="file" accept="application/pdf" class="uploadInput" />
+        <button type="submit">Upload PDF and Parse</button>
+      </form>
+    </div>
+    <div class="rightSide">
+      <div class="headingWrapper">
+        <h3 class="rightSideHeading">Work Smart!</h3>
+      </div>
+      <div class="firstandLastInputs">
+        <input class="names" type="text" placeholder="First name" />
+        <input class="names" type="text" placeholder="Last name" />
+      </div>
+      <input type="text" class="fullWInputs" placeholder="Address" />
+      <div style="margin-top: 20px;" class="firstandLastInputs">
+        <input type="number" class="names" placeholder="Age" />
+        <select class="names">
+          <option selected>Gender</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <input type="text" class="fullWInputs" placeholder="Experience" />
+      <input type="text" class="fullWInputs" placeholder="Qualifications" />
+      <input type="text" class="fullWInputs" placeholder="Expertise/Skills" />
+      <div style="margin-top: 20px;" class="firstandLastInputs">
+        <input type="tel" placeholder="Phone" class="names" />
+        <input type="email" placeholder="Email" class="names" />
+      </div>
+      <input class="dateInput" type="date" />
+      <div class="submitBtnWrapper">
+        <button type="submit" class="submitform">Submit</button>
+      </div>
+    </div>
+  </div>
+  </form>
+  <%- include('partials/bodyclose') %>

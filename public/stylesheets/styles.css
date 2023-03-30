@@ -1,0 +1,239 @@
+body {
+    background-color: grey !important;
+}
+
+.hr {
+    border-bottom: 3px solid black;
+    width: 30%;
+    padding-bottom: 15px;
+}
+
+.logoHr {
+    width: 50%;
+    left: 0;
+}
+
+.authenticatingContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginButtonContainer {
+    padding: 15px 20px;
+    background-color: red;
+}
+
+.loginBtn {
+    text-decoration: none;
+    color: black;
+    padding: 5px 10px;
+    border: 2px solid black;
+    background-color: white;
+}
+
+.imgContainer {
+    bottom: 0;
+}
+
+.img {
+    height: 400px;
+}
+
+.signupContainer {
+    padding: 20px 15px;
+    background-color: red;
+    width: 300px;
+}
+
+.signupContainerHeading {
+    text-align: center;
+}
+
+.firstandLastInputs {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.names {
+    width: 50%;
+    height: 30px;
+}
+
+.fullWInputs {
+    width: 100%;
+    height: 30px;
+    margin-top: 20px;
+}
+
+.helperText {
+    margin-top: 3px;
+    font-size: 13px;
+    color: white;
+}
+
+.submitBtn {
+    width: 100%;
+    padding: 7px 0;
+    background-color: aquamarine;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.5s ease-in-out;
+}
+
+.submitBtn:hover {
+    background-color: rgb(70, 255, 193);
+    cursor: pointer;
+}
+
+hr {
+    border: 2px solid black;
+    margin-top: 0;
+}
+
+.secondContainer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.benefitContainer {
+    width: 200px;
+    padding: 10px 20px;
+    background-color: red;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.benefitsHeading {
+    text-align: center;
+    margin: 0;
+}
+
+.listContainer {
+    width: 150px;
+    margin: 0;
+}
+
+.innerContainer {
+    margin: 0;
+    padding: 0;
+}
+
+.cvImageContainer {
+    padding: 25px;
+    background-color: red;
+}
+
+.uploadPageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.uploadingContainer {
+    display: flex;
+    flex-direction: row;
+    background-color: red;
+    padding: 40px 25px;
+    width: 80%;
+    margin-top: 30px;
+}
+
+.leftSide {
+    width: 50%;
+}
+
+.uploadBtn {
+    padding: 10px 7px;
+    background-color: white;
+    border: 3px solid black;
+}
+
+.notice {
+    font-size: 14px;
+    color: white;
+}
+
+.uploadInput {
+    display: none;
+}
+
+.noPDF {
+    width: 434px;
+    height: 500px;
+    background-color: #f0f0f0;
+    border: 1px solid #d0d0d0;
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.noPDFText {
+    text-transform: uppercase;
+}
+
+#pdf-preview {
+    width: 434px;
+    height: auto;
+    overflow: auto;
+    background-color: #f0f0f0;
+    border: 1px solid #d0d0d0;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.none {
+    display: none;
+}
+
+.rightSide {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.headingWrapper {
+    padding: 0.09rem 10px;
+    background-color: black;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.rightSideHeading {
+    background-color: white;
+    padding: 25px;
+    border-radius: 50%;
+}
+
+.dateInput {
+    height: 30px;
+    margin-top: 20px;
+}
+
+.submitBtnWrapper {
+    padding: 2px 7px;
+    background-color: black;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submitform {
+    background-color: grey;
+    border: none;
+    margin: 0;
+}
+
+.loginContainer {
+    display: flex;
+    justify-content: center;
+}

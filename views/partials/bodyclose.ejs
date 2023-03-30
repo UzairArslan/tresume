@@ -1,0 +1,64 @@
+<script>
+  function previewPDF(event) {
+    let file = event.target.files[0];
+    let fileReader = new FileReader();
+    let pdfPreview = document.querySelector('#pdf-preview');
+    let nopdf = document.querySelector('#noPDF');
+    pdfPreview.classList.remove('none');
+    nopdf.classList.add('none');
+    fileReader.onload = function() {
+      let typedarray = new Uint8Array(this.result);
+      pdfjsLib.getDocument(typedarray)
+        .promise.then(function(pdf) {
+          pdf.getPage(1)
+            .then(function(page) {
+              let canvas = document.createElement('canvas');
+              let canvasContext = canvas.getContext('2d');
+              let viewport = page.getViewport({
+                scale: 1
+              });
+              canvas.height = viewport.height;
+              canvas.width = viewport.width;
+              page.render({
+                  canvasContext
+                  , viewport
+                })
+                .promise.then(function() {
+                  pdfPreview.innerHTML = '';
+                  pdfPreview.appendChild(canvas);
+                  let pdfWidth = pdfPreview.clientWidth;
+                  let pdfHeight = (pdfWidth / viewport.width) * viewport.height;
+                  canvas.style.width = pdfWidth + 'px';
+                  canvas.style.height = pdfHeight + 'px';
+                });
+            });
+        });
+    };
+    fileReader.readAsArrayBuffer(file);
+  }
+  (() => {
+    'use strict'
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll('.signupContainer')
+
+
+    // Loop over them and prevent submission
+    Array.from(forms)
+      .forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+
+          form.classList.add('was-validated')
+        }, false)
+      })
+  })()
+
+</script>
+
+</body>
+
+</html>
